@@ -1,0 +1,32 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background: rgb(235, 235, 235);
+
+}
+
+main {
+    margin: -12px;
+}
+
+nav {
+    background-color: rgb(64, 106, 230);
+    color: white;
+    padding: 20px;
+}
+
+header {
+    padding-bottom: 30px;
+
+
+}
+
+#campos {
+    width: 60vw;
+    margin: auto;
+
+}
+
