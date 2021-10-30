@@ -1,18 +1,46 @@
-let ap = document.getElementsById('aporte')
-let ju = document.getElementsById('rendimento')
-let te = document.getElementsById('tempo')
-let ti = document.getElementsById('title')
 
-let aporte = Number(ap.value)
-let juros = Number(ju)
-let tempo = Number(te)
-let title = Number(ti)
+new Vue({
+    el: '#app',
+    data: {
+        titulo: 'Calculadora de Juros Compostos',
+        aporte: '',
+        i: '',
+        n: '',
+        iMes: '',
+        valorFuturo: '',
+        jurosCompostos: '',
+        totalAporte: '',
+        calcaulado: false
+    },
+    methods: {
+        calcular() {
 
-function calcular(aporte, juros, tempo) {
-    /* prazo = (tempo/12) - 1
-    totalf = (aporte * (1 + (juros/100)^prazo) ) / (juros / 100) */
-    totalf = 2 * 2
-    alert(aporte)
+            if(this.i) {
+                this.iMes = (this.i /100) / 12
+            }
 
-}
+            calc1 = ((1 + this.iMes) ** this.n - 1)
+            calc2 = calc1 / this.iMes
+            vf = this.aporte * calc2
 
+            /* TESTE */
+            /* this.valorFuturo = (`i: ${this.i} | iMes: ${this.iMes} | calc1: ${calc1} | calc2: ${calc2} | vf: ${vf}`) */
+            
+            this.totalAporte = (this.aporte * this.n).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+            this.valorFuturo = vf.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+            this.jurosCompostos = (vf - (this.aporte * this.n)).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})
+
+
+            this.calcaulado = true
+
+        },
+        novoCalculo() {
+            this.calcaulado = false
+            this.aporte = ''
+            this.i = ''
+            this.n = ''
+
+        },
+
+    }
+})

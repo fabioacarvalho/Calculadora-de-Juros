@@ -13,6 +13,8 @@ main {
 }
 
 nav {
+    display: flex;
+    justify-content: center;
     background-color: rgb(64, 106, 230);
     color: white;
     padding: 20px;
@@ -28,6 +30,55 @@ header {
     width: 60vw;
     min-width: 345px;
     margin: auto;
+}
+
+#infos {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px;
 
 }
 
+
+.card {
+    min-width: 160px;
+
+    min-height: 120px;
+    text-align: center;
+    background-color: rgb(64, 106, 230);
+    color: white;
+    margin-top: 5px;
+}
+
+.card-text {
+    font-size: 1.2rem;
+}
+
+#res {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 30px;
+    
+}
+
+@media (max-width: 773px) {
+    #infos {
+        justify-content: center;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .card {
+        min-height: 130px;
+        
+    }
+}
